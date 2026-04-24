@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "blocks",
+  "info": {
+    "singularName": "block",
+    "pluralName": "blocks",
+    "displayName": "Block"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "lesson": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::lesson.lesson",
+      "inversedBy": "blocks"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "intro",
+        "theory",
+        "quiz",
+        "activity",
+        "summary",
+        "teaser"
+      ]
+    },
+    "data": {
+      "type": "json"
+    },
+    "order": {
+      "type": "integer"
+    }
+  }
+}
